@@ -6,6 +6,7 @@
         "author"       : "Scotch",
         "dependencies" : {
             "yargs"  : "*",
-			"underscore": "*"
+			"underscore": "*",
+			"winston"  : "*"
         }
 }

@@ -22,7 +22,7 @@ params.user2 = user2;
 params.user = user;
 
 
-algoMap = {'manhattan':  manhattan, 'nn'  : nearestNeighbor};
+algoMap = {'manhattan':  manhattan, 'nn'  : nearestNeighbor, 'pearson' : pearson};
 
 
 
@@ -127,6 +127,14 @@ function findRecommendations(data, user, nearestNeighbor){
 	
 	
 }
+function minkowski(data, params){
+	
+	if ((params.user1 && !data[user1]) || (params.user2 && !data[user2]) || (!params.r)){
+		console.log("Invalid args", JSON.stringify(params));
+		return;
+	}
+}
+
 function process(data, params){
 	if (params.user && !data[params.user] || (params.user1 && !data[params.user1]) || (params.user2 && !data[params.user2])) {
 		console.log("Invalid args");
@@ -141,5 +149,7 @@ function process(data, params){
 	}
 	
 }
+
+
 readFile("data.json", process,params);
 
