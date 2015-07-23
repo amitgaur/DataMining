@@ -75,3 +75,15 @@ function processRatings(ratings, song1, song2){
 
 
 }
+
+function normalizeRating(absRating, rMin, rMax){
+	 return (2*(absRating - rMin) - (rMax-rMin))/(rMax-rMin)
+	
+}
+
+function denormalizeRating(normRating, rMin, rMax){
+	return rMin + ((normRating +1)*(rMax-rMin))/2;
+}
+
+
+
